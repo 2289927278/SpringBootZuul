@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:8081/eureka/
+server:
+  port: 7007
+spring:
+  application:
+    name: servie-zuul
+    
+# 构建路由地址
+zuul:
+  routes:
+    # 这里可以自定义
+    demo2:
+      # 匹配的路由规则
+      path: /demo/**
+      # 路由的目标服务名
+      serviceId: http://www.baidu.com/
